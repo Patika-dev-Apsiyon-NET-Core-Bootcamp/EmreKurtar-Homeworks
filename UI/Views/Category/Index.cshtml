@@ -1,0 +1,49 @@
+﻿@model List<Category>
+
+<div class="container">
+    <div class="row">
+        <h2> Kategoriler</h2>
+    </div>
+
+    @if (ViewBag.NotFoundCategory != null)
+    {
+        <h3>Kategori silinemedi !!!</h3>
+    }
+    <div>
+        
+            @Html.ActionLink("Kategori ekle","Add","Category")
+        
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-2">
+
+            @if (Model != null)
+            {
+                @foreach (var item in Model)
+                {
+                    <div class="form-horizontal">
+                        <hr />
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                @item.CategoryName
+                            </div>
+                            <div class="col-md-3">
+                                @Html.ActionLink("Delete", "Delete", "Category", new { id = item.ID })
+                            </div>
+                            <div class="col-md-3">
+                                @Html.ActionLink("Edit", "Edit", "Category", new { id = item.ID })
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+
+
+
+
+
+        </div>
+
+    </div>
+</div>
