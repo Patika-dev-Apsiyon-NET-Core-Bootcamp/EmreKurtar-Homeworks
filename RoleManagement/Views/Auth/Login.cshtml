@@ -1,0 +1,22 @@
+﻿@model UserLoginViewModel
+
+
+@using (Html.BeginForm())
+{
+
+
+    @Html.LabelFor(x => x.Username, "Kullanıcı Adı : ", new { })
+@Html.TextBoxFor(x => x.Username)
+
+    <br />
+
+    @Html.LabelFor(x => x.Password, "Şifreniz : ", new { })
+    @Html.TextBoxFor(x => x.Password)
+        
+    <input type="submit" />
+        
+}
+
+
+
+
